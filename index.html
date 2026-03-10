@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ny Ny Shop</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#4facfe,#00f2fe);
+margin:0;
+padding:30px;
+text-align:center;
+}
+
+h1{
+color:white;
+margin-bottom:30px;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+margin-bottom:25px;
+}
+
+button{
+padding:18px 35px;
+font-size:18px;
+border:none;
+border-radius:12px;
+background:white;
+color:#333;
+cursor:pointer;
+font-weight:bold;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.form-box{
+width:100%;
+max-width:900px;
+margin:auto;
+display:none;
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,0.3);
+animation:fade 0.4s;
+}
+
+iframe{
+width:100%;
+height:85vh;
+border:none;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(10px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Ny Ny Shop</h1>
+
+<div class="buttons">
+<button onclick="toggleForm('form1')">Ny Ny Shop​ចំណូល</button>
+<button onclick="toggleForm('form2')">Ny Ny Shop​ចំំណាយ</button>
+<button onclick="toggleForm('form3')">មើលសរុប</button>
+</div>
+
+
+<div id="form1" class="form-box">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUCSoDcDPkNpvCjkiHT4e6I-ulGDASe9ThNHoiTszVmkq5kQ/viewform?usp=publish-editor" width="640" height="680" frameborder="0" marginheight="0" marginwidth="0">កំពុង​ផ្ទុក…</iframe>
+</div>
+
+<div id="form2" class="form-box">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSefzFNjpzMCQdowzLHRBmyuMVBMk9HhQdX9fnMn4_0FPCc53w/viewform?usp=dialog" width="640" height="589" frameborder="0" marginheight="0" marginwidth="0">កំពុង​ផ្ទុក…</iframe>
+</div>
+
+<div id="form3" class="form-box">
+<iframe src="https://docs.google.com/spreadsheets/d/1t5kmA0k3o_GGNsLKw7z5IEl4yuAqjPpGjsyp-E269qY/edit?usp=sharing"></iframe>
+</div>
+
+
+<script>
+
+function toggleForm(id){
+
+const forms=document.querySelectorAll(".form-box")
+
+forms.forEach(f=>{
+if(f.id!==id){
+f.style.display="none"
+}
+})
+
+const target=document.getElementById(id)
+
+if(target.style.display==="block"){
+target.style.display="none"
+}else{
+target.style.display="block"
+target.scrollIntoView({behavior:"smooth"})
+}
+
+}
+
+</script>
+
+</body>
+</html>
